@@ -5,6 +5,7 @@ namespace Mero\Monolog\Handler\Factory;
 use Mero\Monolog\Exception\ParameterNotFoundException;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
+use Yii;
 
 class StreamFactory extends AbstractFactory
 {

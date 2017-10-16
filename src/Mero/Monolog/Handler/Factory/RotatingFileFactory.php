@@ -5,6 +5,7 @@ namespace Mero\Monolog\Handler\Factory;
 use Mero\Monolog\Exception\ParameterNotFoundException;
 use Monolog\Handler\RotatingFileHandler;
 use Monolog\Logger;
+use Yii;
 
 class RotatingFileFactory extends AbstractFactory
 {
