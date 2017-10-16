@@ -1,5 +1,5 @@
 {
-  "name": "mero/yii2-monolog",
+  "name": "borraz/yii2-monolog",
   "description": "The Monolog integration for the Yii framework.",
   "keywords": [
     "yii2",
@@ -10,13 +10,13 @@
   "type": "yii2-extension",
   "license": "MIT",
   "support": {
-    "issues": "https://github.com/merorafael/yii2-monolog/issues",
-    "source": "https://github.com/merorafael/yii2-monolog"
+    "issues": "https://github.com/borraz/yii2-monolog/issues",
+    "source": "https://github.com/borraz/yii2-monolog"
   },
   "authors": [
     {
-      "name": "Rafael Mello",
-      "email": "merorafael@gmail.com"
+      "name": "Miguel Angel Borraz",
+      "email": "miguelangelborraz@gmail.com"
     }
   ],
   "require": {
@@ -34,12 +34,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Mero\\Monolog\\": "src/Mero/Monolog"
+      "Mero\\Monolog\\": "src/Borraz/Monolog"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Mero\\Monolog\\": "tests/Mero/Monolog"
+      "Mero\\Monolog\\": "tests/Borraz/Monolog"
     }
   },
   "extra": {

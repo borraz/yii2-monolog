@@ -1,13 +1,12 @@
 <?php
 
-namespace Mero\Monolog\Handler\Factory;
+namespace Borraz\Monolog\Handler\Factory;
 
-use Mero\Monolog\Exception\ParameterNotFoundException;
-use Monolog\Handler\StreamHandler;
+use Borraz\Monolog\Exception\ParameterNotFoundException;
+use Monolog\Handler\SyslogUdpHandler;
 use Monolog\Logger;
-use Yii;
 
-class StreamFactory extends AbstractFactory
+class SyslogUdpFactory extends AbstractFactory
 {
     /**
      * {@inheritdoc}
@@ -17,12 +16,14 @@ class StreamFactory extends AbstractFactory
         $this->config = array_merge(
             [
                 'level' => Logger::DEBUG,
+                'port' => 512,
+                'facility' => LOG_USER,
                 'bubble' => true,
             ],
             $this->config
         );
 
-        $parametersRequired = ['path'];
+        $parametersRequired = ['host'];
         foreach ($parametersRequired as &$parameter) {
             if (!isset($this->config[$parameter])) {
                 throw new ParameterNotFoundException(
@@ -39,8 +40,10 @@ class StreamFactory extends AbstractFactory
      */
     public function createHandler()
     {
-        return new StreamHandler(
-            Yii::getAlias($this->config['path']),
+        return new SyslogUdpHandler(
+            $this->config['host'],
+            $this->config['port'],
+            $this->config['facility'],
             $this->config['level'],
             $this->config['bubble']
         );

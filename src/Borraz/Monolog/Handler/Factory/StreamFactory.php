@@ -1,12 +1,13 @@
 <?php
 
-namespace Mero\Monolog\Handler\Factory;
+namespace Borraz\Monolog\Handler\Factory;
 
-use Mero\Monolog\Exception\ParameterNotFoundException;
-use Monolog\Handler\GelfHandler;
+use Borraz\Monolog\Exception\ParameterNotFoundException;
+use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
+use Yii;
 
-class GelfFactory extends AbstractFactory
+class StreamFactory extends AbstractFactory
 {
     /**
      * {@inheritdoc}
@@ -21,7 +22,7 @@ class GelfFactory extends AbstractFactory
             $this->config
         );
 
-        $parametersRequired = ['publisher'];
+        $parametersRequired = ['path'];
         foreach ($parametersRequired as &$parameter) {
             if (!isset($this->config[$parameter])) {
                 throw new ParameterNotFoundException(
@@ -38,8 +39,8 @@ class GelfFactory extends AbstractFactory
      */
     public function createHandler()
     {
-        return new GelfHandler(
-            $this->config['publisher'],
+        return new StreamHandler(
+            Yii::getAlias($this->config['path']),
             $this->config['level'],
             $this->config['bubble']
         );

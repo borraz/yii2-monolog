@@ -1,15 +1,15 @@
 <?php
 
-namespace Mero\Monolog\Handler\Factory;
+namespace Borraz\Monolog\Handler\Factory;
 
-use Mero\Monolog\Exception\ParameterNotFoundException;
-use Mero\Monolog\Handler\YiiMongoHandler;
+use Borraz\Monolog\Exception\ParameterNotFoundException;
+use Borraz\Monolog\Handler\YiiDbHandler;
 use Monolog\Logger;
 use yii\base\InvalidConfigException;
+use yii\db\Connection;
 use yii\di\Instance;
-use yii\mongodb\Connection;
 
-class YiiMongoFactory extends AbstractFactory
+class YiiDbFactory extends AbstractFactory
 {
     /**
      * {@inheritdoc}
@@ -20,7 +20,7 @@ class YiiMongoFactory extends AbstractFactory
             [
                 'level' => Logger::DEBUG,
                 'bubble' => true,
-                'collection' => 'logs',
+                'table' => 'logs',
             ],
             $this->config
         );
@@ -56,9 +56,9 @@ class YiiMongoFactory extends AbstractFactory
      */
     public function createHandler()
     {
-        return new YiiMongoHandler(
+        return new YiiDbHandler(
             $this->getYiiConnection($this->config['reference']),
-            $this->config['collection'],
+            $this->config['table'],
             $this->config['level'],
             $this->config['bubble']
         );

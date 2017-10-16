@@ -1,6 +1,6 @@
 <?php
 
-namespace Mero\Monolog\Handler\Factory;
+namespace Borraz\Monolog\Handler\Factory;
 
 use Monolog\Logger;
 use yii\db\Connection;
@@ -8,7 +8,7 @@ use yii\db\Connection;
 class YiiDbFactoryTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @expectedException \Mero\Monolog\Exception\ParameterNotFoundException
+     * @expectedException \Borraz\Monolog\Exception\ParameterNotFoundException
      */
     public function testParameterNotFound()
     {

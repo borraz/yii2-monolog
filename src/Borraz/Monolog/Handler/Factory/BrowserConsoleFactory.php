@@ -1,11 +1,11 @@
 <?php
 
-namespace Mero\Monolog\Handler\Factory;
+namespace Borraz\Monolog\Handler\Factory;
 
-use Monolog\Handler\ChromePHPHandler;
+use Monolog\Handler\BrowserConsoleHandler;
 use Monolog\Logger;
 
-class ChromePHPFactory extends AbstractFactory
+class BrowserConsoleFactory extends AbstractFactory
 {
     /**
      * {@inheritdoc}
@@ -28,7 +28,7 @@ class ChromePHPFactory extends AbstractFactory
      */
     public function createHandler()
     {
-        return new ChromePHPHandler(
+        return new BrowserConsoleHandler(
             $this->config['level'],
             $this->config['bubble']
         );

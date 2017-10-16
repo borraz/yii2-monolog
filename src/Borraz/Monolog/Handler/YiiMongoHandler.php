@@ -1,6 +1,6 @@
 <?php
 
-namespace Mero\Monolog\Handler;
+namespace Borraz\Monolog\Handler;
 
 use Monolog\Formatter\NormalizerFormatter;
 use Monolog\Handler\AbstractProcessingHandler;
@@ -11,7 +11,7 @@ use Monolog\Logger;
 /**
  * Logs to a Yii2 MongoDB connection.
  *
- * @author Rafael Mello <merorafael@gmail.com>
+ * @author Rafael Mello <miguelangelborraz@gmail.com>
  */
 class YiiMongoHandler extends AbstractProcessingHandler
 {

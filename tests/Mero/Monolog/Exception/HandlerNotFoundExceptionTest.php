@@ -1,11 +1,11 @@
 <?php
 
-namespace Mero\Monolog\Exception;
+namespace Borraz\Monolog\Exception;
 
 class HandlerNotFoundExceptionTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @expectedException \Mero\Monolog\Exception\HandlerNotFoundException
+     * @expectedException \Borraz\Monolog\Exception\HandlerNotFoundException
      */
     public function testThrowException()
     {

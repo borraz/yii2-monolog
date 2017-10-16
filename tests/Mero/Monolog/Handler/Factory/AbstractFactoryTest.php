@@ -1,6 +1,6 @@
 <?php
 
-namespace Mero\Monolog\Handler\Factory;
+namespace Borraz\Monolog\Handler\Factory;
 
 class AbstractFactoryTest extends \PHPUnit_Framework_TestCase
 {

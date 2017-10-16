@@ -1,6 +1,6 @@
 <?php
 
-namespace Mero\Monolog\Handler\Factory;
+namespace Borraz\Monolog\Handler\Factory;
 
 use Monolog\Logger;
 
@@ -26,7 +26,7 @@ class SlackFactoryTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider dataProviderParameterNotFound
-     * @expectedException \Mero\Monolog\Exception\ParameterNotFoundException
+     * @expectedException \Borraz\Monolog\Exception\ParameterNotFoundException
      */
     public function testParameterNotFound(array $params)
     {

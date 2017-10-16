@@ -1,8 +1,8 @@
 <?php
 
-namespace Mero\Monolog\Handler;
+namespace Borraz\Monolog\Handler;
 
-use Mero\Monolog\Handler\Factory\StreamFactory;
+use Borraz\Monolog\Handler\Factory\StreamFactory;
 use Monolog\Logger;
 
 class StrategyTest extends \PHPUnit_Framework_TestCase
@@ -27,7 +27,7 @@ class StrategyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Mero\Monolog\Exception\HandlerNotFoundException
+     * @expectedException \Borraz\Monolog\Exception\HandlerNotFoundException
      */
     public function testHandlerNotFound()
     {
@@ -78,7 +78,7 @@ class StrategyTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Mero\Monolog\Exception\ParameterNotFoundException
+     * @expectedException \Borraz\Monolog\Exception\ParameterNotFoundException
      */
     public function testParameterNotFoundException()
     {

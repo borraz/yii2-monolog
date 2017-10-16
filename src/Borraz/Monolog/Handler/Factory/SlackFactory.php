@@ -1,12 +1,12 @@
 <?php
 
-namespace Mero\Monolog\Handler\Factory;
+namespace Borraz\Monolog\Handler\Factory;
 
-use Mero\Monolog\Exception\ParameterNotFoundException;
-use Monolog\Handler\HipChatHandler;
+use Borraz\Monolog\Exception\ParameterNotFoundException;
+use Monolog\Handler\SlackHandler;
 use Monolog\Logger;
 
-class HipChatFactory extends AbstractFactory
+class SlackFactory extends AbstractFactory
 {
     /**
      * {@inheritdoc}
@@ -16,18 +16,17 @@ class HipChatFactory extends AbstractFactory
         $this->config = array_merge(
             [
                 'level' => Logger::DEBUG,
-                'notify' => false,
-                'nickname' => 'Monolog',
+                'username' => 'Monolog',
+                'useAttachment' => true,
+                'iconEmoji' => ':computer:',
                 'bubble' => true,
-                'use_ssl' => true,
-                'message_format' => 'text',
-                'host' => 'api.hipchat.com',
-                'api_version' => HipChatHandler::API_V1,
+                'useShortAttachment' => false,
+                'includeContextAndExtra' => false,
             ],
             $this->config
         );
 
-        $parametersRequired = ['token', 'room'];
+        $parametersRequired = ['token', 'channel'];
         foreach ($parametersRequired as &$parameter) {
             if (!isset($this->config[$parameter])) {
                 throw new ParameterNotFoundException(
@@ -44,17 +43,16 @@ class HipChatFactory extends AbstractFactory
      */
     public function createHandler()
     {
-        return new HipChatHandler(
+        return new SlackHandler(
             $this->config['token'],
-            $this->config['room'],
-            $this->config['nickname'],
-            $this->config['notify'],
+            $this->config['channel'],
+            $this->config['username'],
+            $this->config['useAttachment'],
+            $this->config['iconEmoji'],
             $this->config['level'],
             $this->config['bubble'],
-            $this->config['use_ssl'],
-            $this->config['message_format'],
-            $this->config['host'],
-            $this->config['version']
+            $this->config['useShortAttachment'],
+            $this->config['includeContextAndExtra']
         );
     }
 }

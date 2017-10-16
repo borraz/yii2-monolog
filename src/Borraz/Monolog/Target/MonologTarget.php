@@ -1,8 +1,8 @@
 <?php
 
-namespace Mero\Monolog\Target;
+namespace Borraz\Monolog\Target;
 
-use Mero\Monolog\MonologComponent;
+use Borraz\Monolog\MonologComponent;
 use Monolog\Logger;
 use yii\di\Instance;
 use yii\log\Logger as YiiLogger;
@@ -11,7 +11,7 @@ use yii\log\Target;
 /**
  * MonologTarget send log messages to Monolog channel.
  *
- * @author Rafael Mello <merorafael@gmail.com>
+ * @author Rafael Mello <miguelangelborraz@gmail.com>
  */
 class MonologTarget extends Target
 {

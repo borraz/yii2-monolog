@@ -1,11 +1,11 @@
 <?php
 
-namespace Mero\Monolog\Exception;
+namespace Borraz\Monolog\Exception;
 
 class LoggerNotFoundException extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @expectedException \Mero\Monolog\Exception\LoggerNotFoundException
+     * @expectedException \Borraz\Monolog\Exception\LoggerNotFoundException
      */
     public function testThrowException()
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Mero\Monolog\Exception;
+namespace Borraz\Monolog\Exception;
 
 class ParameterNotFoundException extends \Exception
 {

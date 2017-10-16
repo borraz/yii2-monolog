@@ -1,6 +1,6 @@
 <?php
 
-namespace Mero\Monolog\Handler\Factory;
+namespace Borraz\Monolog\Handler\Factory;
 
 if (!class_exists('\Yii') && !class_exists(__NAMESPACE__.'\Yii')) {
     class Yii

@@ -1,10 +1,10 @@
 <?php
 
-namespace Mero\Monolog;
+namespace Borraz\Monolog;
 
-use Mero\Monolog\Exception\HandlerNotFoundException;
-use Mero\Monolog\Exception\LoggerNotFoundException;
-use Mero\Monolog\Handler\Strategy;
+use Borraz\Monolog\Exception\HandlerNotFoundException;
+use Borraz\Monolog\Exception\LoggerNotFoundException;
+use Borraz\Monolog\Handler\Strategy;
 use Monolog\Formatter\FormatterInterface;
 use Monolog\Handler\AbstractHandler;
 use yii\base\Component;
@@ -13,7 +13,7 @@ use Monolog\Logger;
 /**
  * MonologComponent is an component for the Monolog library.
  *
- * @author Rafael Mello <merorafael@gmail.com>
+ * @author Rafael Mello <miguelangelborraz@gmail.com>
  */
 class MonologComponent extends Component
 {

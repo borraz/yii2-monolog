@@ -1,12 +1,12 @@
 <?php
 
-namespace Mero\Monolog\Handler\Factory;
+namespace Borraz\Monolog\Handler\Factory;
 
-use Mero\Monolog\Exception\ParameterNotFoundException;
-use Monolog\Handler\SocketHandler;
+use Borraz\Monolog\Exception\ParameterNotFoundException;
+use Monolog\Handler\GelfHandler;
 use Monolog\Logger;
 
-class SocketFactory extends AbstractFactory
+class GelfFactory extends AbstractFactory
 {
     /**
      * {@inheritdoc}
@@ -21,7 +21,7 @@ class SocketFactory extends AbstractFactory
             $this->config
         );
 
-        $parametersRequired = ['connection_string'];
+        $parametersRequired = ['publisher'];
         foreach ($parametersRequired as &$parameter) {
             if (!isset($this->config[$parameter])) {
                 throw new ParameterNotFoundException(
@@ -38,21 +38,10 @@ class SocketFactory extends AbstractFactory
      */
     public function createHandler()
     {
-        $handler = new SocketHandler(
-            $this->config['connection_string'],
+        return new GelfHandler(
+            $this->config['publisher'],
             $this->config['level'],
             $this->config['bubble']
         );
-        if (isset($this->config['timeout'])) {
-            $handler->setTimeout($this->config['timeout']);
-        }
-        if (isset($this->config['connection_timeout'])) {
-            $handler->setConnectionTimeout($this->config['connection_timeout']);
-        }
-        if (isset($this->config['persistent'])) {
-            $handler->setPersistent($this->config['persistent']);
-        }
-
-        return $handler;
     }
 }

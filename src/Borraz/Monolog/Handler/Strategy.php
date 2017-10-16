@@ -1,23 +1,23 @@
 <?php
 
-namespace Mero\Monolog\Handler;
+namespace Borraz\Monolog\Handler;
 
-use Mero\Monolog\Exception\HandlerNotFoundException;
-use Mero\Monolog\Exception\ParameterNotFoundException;
-use Mero\Monolog\Handler\Factory\AbstractFactory;
-use Mero\Monolog\Handler\Factory\BrowserConsoleFactory;
-use Mero\Monolog\Handler\Factory\ChromePHPFactory;
-use Mero\Monolog\Handler\Factory\FirePHPFactory;
-use Mero\Monolog\Handler\Factory\GelfFactory;
-use Mero\Monolog\Handler\Factory\HipChatFactory;
-use Mero\Monolog\Handler\Factory\RotatingFileFactory;
-use Mero\Monolog\Handler\Factory\SlackFactory;
-use Mero\Monolog\Handler\Factory\SocketFactory;
-use Mero\Monolog\Handler\Factory\StreamFactory;
-use Mero\Monolog\Handler\Factory\SyslogFactory;
-use Mero\Monolog\Handler\Factory\SyslogUdpFactory;
-use Mero\Monolog\Handler\Factory\YiiDbFactory;
-use Mero\Monolog\Handler\Factory\YiiMongoFactory;
+use Borraz\Monolog\Exception\HandlerNotFoundException;
+use Borraz\Monolog\Exception\ParameterNotFoundException;
+use Borraz\Monolog\Handler\Factory\AbstractFactory;
+use Borraz\Monolog\Handler\Factory\BrowserConsoleFactory;
+use Borraz\Monolog\Handler\Factory\ChromePHPFactory;
+use Borraz\Monolog\Handler\Factory\FirePHPFactory;
+use Borraz\Monolog\Handler\Factory\GelfFactory;
+use Borraz\Monolog\Handler\Factory\HipChatFactory;
+use Borraz\Monolog\Handler\Factory\RotatingFileFactory;
+use Borraz\Monolog\Handler\Factory\SlackFactory;
+use Borraz\Monolog\Handler\Factory\SocketFactory;
+use Borraz\Monolog\Handler\Factory\StreamFactory;
+use Borraz\Monolog\Handler\Factory\SyslogFactory;
+use Borraz\Monolog\Handler\Factory\SyslogUdpFactory;
+use Borraz\Monolog\Handler\Factory\YiiDbFactory;
+use Borraz\Monolog\Handler\Factory\YiiMongoFactory;
 use Monolog\Logger;
 
 class Strategy

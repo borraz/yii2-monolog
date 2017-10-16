@@ -1,6 +1,6 @@
 <?php
 
-namespace Mero\Monolog;
+namespace Borraz\Monolog;
 
 use Monolog\Logger;
 
@@ -25,7 +25,7 @@ class MonologComponentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Mero\Monolog\Exception\LoggerNotFoundException
+     * @expectedException \Borraz\Monolog\Exception\LoggerNotFoundException
      */
     public function testLoggerNotFoundException()
     {
@@ -50,7 +50,7 @@ class MonologComponentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Mero\Monolog\Exception\LoggerNotFoundException
+     * @expectedException \Borraz\Monolog\Exception\LoggerNotFoundException
      */
     public function testCloseChannel()
     {

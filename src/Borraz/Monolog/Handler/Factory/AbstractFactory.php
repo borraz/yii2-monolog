@@ -1,8 +1,8 @@
 <?php
 
-namespace Mero\Monolog\Handler\Factory;
+namespace Borraz\Monolog\Handler\Factory;
 
-use Mero\Monolog\Exception\ParameterNotFoundException;
+use Borraz\Monolog\Exception\ParameterNotFoundException;
 use Monolog\Handler\AbstractHandler;
 
 abstract class AbstractFactory

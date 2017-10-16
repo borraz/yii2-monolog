@@ -1,12 +1,13 @@
 <?php
 
-namespace Mero\Monolog\Handler\Factory;
+namespace Borraz\Monolog\Handler\Factory;
 
-use Mero\Monolog\Exception\ParameterNotFoundException;
-use Monolog\Handler\SyslogHandler;
+use Borraz\Monolog\Exception\ParameterNotFoundException;
+use Monolog\Handler\RotatingFileHandler;
 use Monolog\Logger;
+use Yii;
 
-class SyslogFactory extends AbstractFactory
+class RotatingFileFactory extends AbstractFactory
 {
     /**
      * {@inheritdoc}
@@ -16,14 +17,16 @@ class SyslogFactory extends AbstractFactory
         $this->config = array_merge(
             [
                 'level' => Logger::DEBUG,
-                'facility' => LOG_USER,
-                'logopts' => LOG_PID,
                 'bubble' => true,
+                'max_files' => 0,
+                'file_permission' => null,
+                'filename_format' => '{filename}-{date}',
+                'date_format' => 'Y-m-d',
             ],
             $this->config
         );
 
-        $parametersRequired = ['ident'];
+        $parametersRequired = ['path'];
         foreach ($parametersRequired as &$parameter) {
             if (!isset($this->config[$parameter])) {
                 throw new ParameterNotFoundException(
@@ -40,12 +43,18 @@ class SyslogFactory extends AbstractFactory
      */
     public function createHandler()
     {
-        return new SyslogHandler(
-            $this->config['ident'],
-            $this->config['facility'],
+        $handler = new RotatingFileHandler(
+            Yii::getAlias($this->config['path']),
+            $this->config['max_files'],
             $this->config['level'],
             $this->config['bubble'],
-            $this->config['logopts']
+            $this->config['file_permission']
         );
+        $handler->setFilenameFormat(
+            $this->config['filename_format'],
+            $this->config['date_format']
+        );
+
+        return $handler;
     }
 }

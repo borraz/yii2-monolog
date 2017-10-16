@@ -1,6 +1,6 @@
 <?php
 
-namespace Mero\Monolog\Handler;
+namespace Borraz\Monolog\Handler;
 
 use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
@@ -9,7 +9,7 @@ use yii\db\Connection;
 /**
  * Logs to a Yii2 database connection.
  *
- * @author Rafael Mello <merorafael@gmail.com>
+ * @author Rafael Mello <miguelangelborraz@gmail.com>
  */
 class YiiDbHandler extends AbstractProcessingHandler
 {

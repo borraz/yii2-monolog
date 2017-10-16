@@ -1,6 +1,6 @@
 <?php
 
-namespace Mero\Monolog\Handler;
+namespace Borraz\Monolog\Handler;
 
 use Monolog\Logger;
 

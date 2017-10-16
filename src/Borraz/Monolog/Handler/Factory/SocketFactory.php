@@ -1,12 +1,12 @@
 <?php
 
-namespace Mero\Monolog\Handler\Factory;
+namespace Borraz\Monolog\Handler\Factory;
 
-use Mero\Monolog\Exception\ParameterNotFoundException;
-use Monolog\Handler\SyslogUdpHandler;
+use Borraz\Monolog\Exception\ParameterNotFoundException;
+use Monolog\Handler\SocketHandler;
 use Monolog\Logger;
 
-class SyslogUdpFactory extends AbstractFactory
+class SocketFactory extends AbstractFactory
 {
     /**
      * {@inheritdoc}
@@ -16,14 +16,12 @@ class SyslogUdpFactory extends AbstractFactory
         $this->config = array_merge(
             [
                 'level' => Logger::DEBUG,
-                'port' => 512,
-                'facility' => LOG_USER,
                 'bubble' => true,
             ],
             $this->config
         );
 
-        $parametersRequired = ['host'];
+        $parametersRequired = ['connection_string'];
         foreach ($parametersRequired as &$parameter) {
             if (!isset($this->config[$parameter])) {
                 throw new ParameterNotFoundException(
@@ -40,12 +38,21 @@ class SyslogUdpFactory extends AbstractFactory
      */
     public function createHandler()
     {
-        return new SyslogUdpHandler(
-            $this->config['host'],
-            $this->config['port'],
-            $this->config['facility'],
+        $handler = new SocketHandler(
+            $this->config['connection_string'],
             $this->config['level'],
             $this->config['bubble']
         );
+        if (isset($this->config['timeout'])) {
+            $handler->setTimeout($this->config['timeout']);
+        }
+        if (isset($this->config['connection_timeout'])) {
+            $handler->setConnectionTimeout($this->config['connection_timeout']);
+        }
+        if (isset($this->config['persistent'])) {
+            $handler->setPersistent($this->config['persistent']);
+        }
+
+        return $handler;
     }
 }

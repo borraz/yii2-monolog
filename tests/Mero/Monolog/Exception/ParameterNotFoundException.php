@@ -1,11 +1,11 @@
 <?php
 
-namespace Mero\Monolog\Exception;
+namespace Borraz\Monolog\Exception;
 
 class ParameterNotFoundException extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @expectedException \Mero\Monolog\Exception\ParameterNotFoundException
+     * @expectedException \Borraz\Monolog\Exception\ParameterNotFoundException
      */
     public function testThrowException()
     {
