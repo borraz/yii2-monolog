@@ -16,7 +16,7 @@ como configura-lo.
 
 | Nome do campo  | Descrição                                               |
 | -------------  | ------------------------------------------------------- |
-| class          | `\Mero\Monolog\Target\MonologTarget::className()`       |
+| class          | `\Borraz\Monolog\Target\MonologTarget::className()`       |
 | component_name | Nome do component referênte ao monolog                  |
 | channel        | Canal no qual será registrado os logs(default `main`)   |
 | levels         | Leveis de log do Yii2 que serão enviados para o Monolog |
@@ -30,7 +30,7 @@ return [
         // ...
         'log' => [
             'targets' => [
-                'class' => \Mero\Monolog\Target\MonologTarget::className(),
+                'class' => \Borraz\Monolog\Target\MonologTarget::className(),
                 'component_name' => 'monolog',
                 'channel' => 'main',
                 'levels' => ['error', 'warning', 'info'],

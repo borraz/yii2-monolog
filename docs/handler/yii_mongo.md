@@ -57,7 +57,7 @@ return [
         'channels' => [
             'main' => [
                 'handler' => [
-                    new \Mero\Monolog\Handler\YiiMongoHandler(
+                    new \Borraz\Monolog\Handler\YiiMongoHandler(
                         Yii::$app->mongodb,
                         'collection_name',
                         \Monolog\Logger::DEBUG

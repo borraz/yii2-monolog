@@ -6,12 +6,12 @@
     </logging>
     <testsuites>
         <testsuite name="Yii2 Monolog Test Suite">
-            <directory>./tests/Mero/Monolog/</directory>
+            <directory>./tests/Borraz/Monolog/</directory>
         </testsuite>
     </testsuites>
     <filter>
         <whitelist>
-            <directory suffix=".php">./src/Mero/Monolog/</directory>
+            <directory suffix=".php">./src/Borraz/Monolog/</directory>
         </whitelist>
     </filter>
     <php>

@@ -71,7 +71,7 @@ return [
         'channels' => [
             'main' => [
                 'handler' => [
-                    new \Mero\Monolog\Handler\YiiDbHandler(
+                    new \Borraz\Monolog\Handler\YiiDbHandler(
                         Yii::$app->db,
                         'nome_tabela',
                         \Monolog\Logger::DEBUG

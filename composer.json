@@ -34,12 +34,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Mero\\Monolog\\": "src/Borraz/Monolog"
+      "Borraz\\Monolog\\": "src/Borraz/Monolog"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Mero\\Monolog\\": "tests/Borraz/Monolog"
+      "Borraz\\Monolog\\": "tests/Borraz/Monolog"
     }
   },
   "extra": {
